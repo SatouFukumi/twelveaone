@@ -1,0 +1,9 @@
+:root {
+    --layout-spacing: clamp(0.75rem, 0.5vmax, 1.25rem);
+    --layout-border-radius: 8px;
+}
+
+::selection {
+    background-color: rgba(255, 0, 255, .6);
+    color: white;
+}

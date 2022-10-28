@@ -1,0 +1,53 @@
+@mixin background {
+    background-color: white;
+
+    border-radius: var(--layout-border-radius);
+
+    box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-template-areas:
+        '📏 📏 📏'
+        '🧭 📦 📦'
+        '🧭 📦 📦'
+    ;
+
+    gap: var(--layout-spacing);
+
+    padding: var(--layout-spacing);
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-color: whitesmoke;
+
+    #navigation {
+        @include background;
+
+        grid-area: 🧭;
+    }
+
+    #ruler {
+        @include background;
+
+        grid-area: 📏;
+
+        display: flex;
+
+        place-items: center;
+
+        padding-inline: var(--layout-spacing);
+    }
+
+    #container {
+        @include background;
+
+        grid-area: 📦;
+    }
+}
