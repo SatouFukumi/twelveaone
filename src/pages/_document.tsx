@@ -1,18 +1,18 @@
-import { Main, NextScript, Head, Html } from "next/document"
+import NextDocument, { Main, NextScript, Head, Html } from "next/document"
 
-const Document = () => {
-    return (
-        <Html lang="vi">
-            <Head>
-                <meta charSet="utf-8" />
-            </Head>
+export default class Document extends NextDocument {
+    render(): JSX.Element {
+        return (
+            <Html lang='vi'>
+                <Head>
+                    <meta charSet="utf-8" />
+                </Head>
 
-            <body>
-                <Main />
-                <NextScript />
-            </body>
-        </Html>
-    )
+                <body>
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
+    }
 }
-
-export default Document

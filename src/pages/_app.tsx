@@ -8,9 +8,9 @@ import Navigation from "components/app/navigation"
 // stylesheets
 import "assets/styles/main.scss"
 import "src/styles/globals.scss"
-import layout from 'src/styles/layout.module.scss'
+import layout from "src/styles/layout.module.scss"
 
-const App: AppType = ({ Component, pageProps }) => {
+const App: AppType = ({ Component, pageProps, router }) => {
     return (
         <section id={layout.app}>
             {/* helpers */}
@@ -20,7 +20,10 @@ const App: AppType = ({ Component, pageProps }) => {
             <Ruler id={layout.ruler} />
             <Navigation id={layout.navigation} />
             <Container id={layout.container}>
-                <Component {...pageProps} />
+                <Component
+                    key={router.asPath}
+                    {...pageProps}
+                />
             </Container>
         </section>
     )
