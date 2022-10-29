@@ -1,32 +1,39 @@
-import { AppType } from "next/app"
-import { trpc } from "src/backend/api/trpc"
-import { Tooltip } from "assets/components/tooltip"
-import Container from "components/app/container"
-import Ruler from "components/app/ruler"
-import Navigation from "components/app/navigation"
-
 // stylesheets
 import "assets/styles/main.scss"
 import "src/styles/globals.scss"
 import layout from "src/styles/layout.module.scss"
 
-const App: AppType = ({ Component, pageProps, router }) => {
-    return (
-        <section id={layout.app}>
-            {/* helpers */}
-            <Tooltip />
+import { Tooltip } from "assets/components/tooltip"
+import Container from "components/app/container"
+import Navigation from "components/app/navigation"
+import Ruler from "components/app/ruler"
+import NextApp from "next/app"
+import { trpc } from "src/backend/api/trpc"
+import { AnimatePresence } from "framer-motion"
 
-            {/* main content */}
-            <Ruler id={layout.ruler} />
-            <Navigation id={layout.navigation} />
-            <Container id={layout.container}>
-                <Component
-                    key={router.asPath}
-                    {...pageProps}
-                />
-            </Container>
-        </section>
-    )
+class App extends NextApp {
+    render(): JSX.Element {
+        const { Component, router, pageProps } = this.props
+
+        return (
+            <section id={layout.app}>
+                {/* helpers */}
+                <Tooltip />
+
+                {/* main content */}
+                <Ruler id={layout.ruler} />
+                <Navigation id={layout.navigation} />
+                <Container id={layout.container}>
+                    <AnimatePresence>
+                        <Component
+                            key={router.asPath}
+                            {...pageProps}
+                        />
+                    </AnimatePresence>
+                </Container>
+            </section>
+        )
+    }
 }
 
 export default trpc.withTRPC(App)

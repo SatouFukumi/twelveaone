@@ -1,7 +1,7 @@
+import styles from "src/styles/ruler.module.scss"
 import { useClock, useRenderEffect } from "@ts/hooks"
 import { libraries } from "@ts/libraries"
 import { useState } from "react"
-import styles from "src/styles/ruler.module.scss"
 
 const Clock: React.FC = () => {
     const date = useClock()
