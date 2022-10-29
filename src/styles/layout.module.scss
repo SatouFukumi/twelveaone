@@ -1,5 +1,5 @@
 @mixin background {
-    background-color: white;
+    background-color: var(--gl-color-white);
 
     border-radius: var(--layout-border-radius);
 
@@ -27,6 +27,9 @@
 
     background-color: whitesmoke;
 
+    // global color
+    color: var(--gl-color-black);
+
     #navigation {
         @include background;
 
@@ -37,12 +40,6 @@
         @include background;
 
         grid-area: 📏;
-
-        display: flex;
-
-        place-items: center;
-
-        padding-inline: var(--layout-spacing);
     }
 
     #container {

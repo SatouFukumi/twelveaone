@@ -1,6 +1,13 @@
 :root {
     --layout-spacing: clamp(0.75rem, 0.5vmax, 1.25rem);
     --layout-border-radius: 8px;
+
+    // color palette
+    --gl-color-darkblue: #0a2461;
+    --gl-color-blue: #4ca0dc;
+    --gl-color-white: #fffaff;
+    --gl-color-rose: #d8315b;
+    --gl-color-black: #1f1c19;
 }
 
 ::selection {
