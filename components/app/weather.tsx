@@ -10,6 +10,11 @@ const Weather: React.FC = () => {
 
     useEffect(() => {
         if (position?.coords) setCoords(position.coords)
+
+        /**
+         * TODO getting address and display
+         * https://stackoverflow.com/questions/66506483/how-to-get-the-address-from-coordinates-with-open-street-maps-api/66509433#66509433
+         */
     }, [position])
 
     if (!position) return <>default</>
