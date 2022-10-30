@@ -1,7 +1,7 @@
 @mixin background {
     background-color: var(--gl-color-white);
 
-    border-radius: var(--layout-border-radius);
+    border-radius: var(--gl-layout-border-radius);
 
     box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 0px;
 }
@@ -16,9 +16,9 @@
         '🧭 📦 📦'
     ;
 
-    gap: var(--layout-spacing);
+    gap: var(--gl-layout-spacing);
 
-    padding: var(--layout-spacing);
+    padding: var(--gl-layout-spacing);
 
     width: 100vw;
     height: 100vh;

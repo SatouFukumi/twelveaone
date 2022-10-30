@@ -5,18 +5,19 @@
     place-items: center;
     place-content: center space-between;
 
-    padding-inline: var(--layout-spacing);
-    
+    padding-inline: var(--gl-layout-spacing);
+
     .clock {
-        display: inline-block;
-        
-        font-weight: 900;
-        font-family: "LuckiestGuy";
-        font-size: 1.75em;
+        display: inline;
+
+        font-weight: 100;
+        font-family: "Chango";
+        font-size: 1.25em;
 
         color: var(--gl-color-darkblue);
+
         text-shadow: 0 0 2px var(--gl-color-white);
 
-        width: 6ch;
+        width: 6.5ch;
     }
 }
