@@ -41,5 +41,5 @@ export const membersRouter = router({
         })
 
         return students.sort((a, b) => a.index - b.index) as Student[]
-    })
+    }),
 })

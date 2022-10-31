@@ -4,18 +4,17 @@ import "src/styles/globals.scss"
 import layout from "src/styles/layout.module.scss"
 
 import { Tooltip } from "assets/components/tooltip"
+import { StrictMode } from "react"
 import Container from "components/app/container"
 import Navigation from "components/app/navigation"
 import Ruler from "components/app/ruler"
-import NextApp from "next/app"
+import { AppType } from "next/app"
 import { trpc } from "src/backend/api/trpc"
 import { AnimatePresence } from "framer-motion"
 
-class App extends NextApp {
-    render(): JSX.Element {
-        const { Component, router, pageProps } = this.props
-
-        return (
+const App: AppType = ({ Component, pageProps, router }) => {
+    return (
+        <StrictMode>
             <section id={layout.app}>
                 {/* helpers */}
                 <Tooltip />
@@ -32,8 +31,8 @@ class App extends NextApp {
                     </AnimatePresence>
                 </Container>
             </section>
-        )
-    }
+        </StrictMode>
+    )
 }
 
 export default trpc.withTRPC(App)
