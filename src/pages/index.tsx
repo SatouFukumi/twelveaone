@@ -1,4 +1,4 @@
-import Content from "components/app/content"
+import Content from "src/components/app/content"
 import { NextPage } from "next"
 
 const Index: NextPage = () => {
