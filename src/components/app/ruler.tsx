@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styles from "src/styles/ruler.module.scss"
 import Clock from "./clock"
 import Weather from "./weather"
@@ -14,4 +15,4 @@ const Ruler: React.FC<LayoutProps> = ({ id }) => {
     )
 }
 
-export default Ruler
+export default memo(Ruler)
