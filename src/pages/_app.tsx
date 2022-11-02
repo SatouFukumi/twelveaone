@@ -3,7 +3,7 @@ import "assets/styles/main.scss"
 import "src/styles/globals.scss"
 import layout from "src/styles/layout.module.scss"
 
-import { Div, Tooltip } from "assets/components/tooltip"
+import { Tooltip } from "assets/components/tooltip"
 import { StrictMode, useEffect } from "react"
 import Container from "src/components/app/container"
 import Ruler from "src/components/app/ruler"
@@ -33,17 +33,6 @@ const App: AppType = ({ Component, pageProps, router }) => {
                 <Navigation id={layout.navigation} />
                 <Container id={layout.container}>
                     <AnimatePresence>
-                        <Div
-                            key={1}
-                            tooltip="hi"
-                            style={{ height: 200 }}
-                            padding={false}
-                        />
-                        <Div
-                            key={2}
-                            tooltip="lorem5000000000000000000000000000000000"
-                            style={{ height: 200 }}
-                        />
                         <Component
                             key={router.asPath}
                             {...pageProps}
