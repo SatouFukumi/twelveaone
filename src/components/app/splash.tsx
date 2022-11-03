@@ -1,14 +1,16 @@
 import Image from "next/image"
+import { memo, useState } from "react"
 import styles from "src/styles/splash.module.scss"
 import useSplashScreen from "./use-splash-screen"
 
 const Splash: React.FC = () => {
     const { show } = useSplashScreen()
+    const [loading, setLoading] = useState(true)
 
     return (
         <div
             id={styles.splash}
-            data-show={show}
+            data-show={loading}
         >
             <div className={styles.logo}>
                 <Image
@@ -17,6 +19,9 @@ const Splash: React.FC = () => {
                     src={require("public/icons/favicon.ico")}
                     blurDataURL={require("public/icons/favicon.ico")}
                     sizes="auto"
+                    onLoadingComplete={() => {
+                        if (!show) setLoading(false)
+                    }}
                 />
             </div>
             <span className={styles.title}>12A1 Fanpage</span>
@@ -72,4 +77,4 @@ const Splash: React.FC = () => {
     )
 }
 
-export default Splash
+export default memo(Splash)

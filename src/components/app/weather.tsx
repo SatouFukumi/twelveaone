@@ -1,4 +1,5 @@
 import { useGeolocation } from "@ts/hooks"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import { trpc } from "src/backend/api/trpc"
 
@@ -9,7 +10,7 @@ const Weather: React.FC = () => {
         latitude: 14.04345875,
     })
 
-    const { isLoading, data: address } = trpc.weatherRouter.get.useQuery({
+    const { isLoading, data: OWM } = trpc.weatherRouter.get.useQuery({
         latitude: coords.latitude,
         longitude: coords.longitude,
     })
@@ -19,9 +20,19 @@ const Weather: React.FC = () => {
     }, [geoPosition])
 
     // cSpell: disable
-    if (!address || isLoading) return <>Mang Yang</>
+    if (!OWM || isLoading) return <>Loading...</>
 
-    return <>{address.county}</>
+    const { icon } = OWM.weather[0]
+
+    return (
+        <Image
+            alt=""
+            src={`https://openweathermap.org/img/w/${icon}.png`}
+            width='30'
+            height='30'
+            loading="lazy"
+        />
+    )
     // cSpell: enable
 }
 

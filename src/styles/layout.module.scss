@@ -43,8 +43,12 @@
     }
 
     #container {
-        @include background;
-
         grid-area: 📦;
+
+        .content {
+            @include background;
+
+            height: 100%;
+        }
     }
 }
