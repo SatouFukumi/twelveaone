@@ -96,8 +96,8 @@ async function fetchWeather({ lat, lon }: { lat: number; lon: number }) {
     const res = await axios.get(url, {
         params: z
             .object({
-                lat: z.number(),
                 lon: z.number(),
+                lat: z.number(),
                 appid: z.string(),
             })
             .parse({ lat, lon, appid: process.env.OWM_API_KEY }),
@@ -118,16 +118,11 @@ export const weatherRouter = router({
             })
         )
         .query(async ({ input }) => {
-            const address: Address = await fetchAddress({
-                lat: input.latitude,
-                lon: input.longitude,
-            })
-
             const weather = await fetchWeather({
                 lat: input.latitude,
                 lon: input.longitude,
             })
 
-            return Object.assign(weather, address)
+            return weather
         }),
 })

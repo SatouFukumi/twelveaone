@@ -3,6 +3,9 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { trpc } from "src/backend/api/trpc"
 
+// kelvin to celcius
+const k2c = (k: number) => Math.round(k - 273.15)
+
 const Weather: React.FC = () => {
     const { geoPosition } = useGeolocation()
     const [coords, setCoords] = useState({
@@ -22,16 +25,18 @@ const Weather: React.FC = () => {
     // cSpell: disable
     if (!OWM || isLoading) return <>Loading...</>
 
-    const { icon } = OWM.weather[0]
+    const { main, weather } = OWM
 
     return (
-        <Image
-            alt=""
-            src={`https://openweathermap.org/img/w/${icon}.png`}
-            width='30'
-            height='30'
-            loading="lazy"
-        />
+        <span>
+            <Image
+                alt=""
+                src={`https://openweathermap.org/img/w/${weather[0].icon}.png`}
+                width="30"
+                height="30"
+                loading="lazy"
+            />
+        </span>
     )
     // cSpell: enable
 }
