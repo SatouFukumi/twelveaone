@@ -1,9 +1,3 @@
 {
-    "extends": ["next/core-web-vitals"],
-    "rules": {
-        "camelcase": "error",
-        "arrow-spacing": "error",
-        "operator-linebreak": ["error", "before"],
-        "max-statements-per-line": ["error", { "max": 2 }]
-    }
+  "extends": "next/core-web-vitals"
 }

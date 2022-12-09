@@ -1,0 +1,121 @@
+body {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#splash {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-block-end: 2px;
+  background-color: #fffaff;
+  z-index: 1000000;
+  user-select: none;
+  transform-origin: center center;
+  overflow: hidden;
+}
+#splash .logo {
+  position: relative;
+  aspect-ratio: 1/1;
+  width: 25vmin;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+#splash .title {
+  font-weight: 900;
+  font-size: clamp(20px, 1.25vmax, 25px);
+  font-family: "LuckiestGuy";
+  color: transparent;
+  background-image: linear-gradient(#5c7793, #14233e);
+  background-clip: text;
+  margin-block-start: 20px;
+}
+#splash .loadingBar {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ececec;
+  z-index: 2;
+}
+#splash .loadingBar .loadingThumb {
+  height: 100%;
+  width: 0%;
+  animation: forwards 1500ms load cubic-bezier(0.22, 0.5, 0.36, 0.85);
+  background-size: 100vw;
+  background-image: linear-gradient(270deg, #4568DC, #B06AB3, #d8315b);
+  box-shadow: #1f1c19 0px 0px 2px 0px;
+}
+#splash .waves {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  width: 100%;
+  height: 40vh;
+  margin-bottom: -7px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+#splash .waves .parallax > use {
+  animation: moveForever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+#splash .waves .parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+#splash .waves .parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+#splash .waves .parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+#splash .waves .parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+#splash[data-show=false] {
+  animation: forwards 400ms hide cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: 1600ms;
+}
+#splash[data-show=false] .waves {
+  translate: 0 100%;
+  transition: all 100ms ease-out 1500ms;
+}
+
+@keyframes load {
+  100% {
+    width: 100%;
+  }
+}
+@keyframes moveForever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+@keyframes hide {
+  99% {
+    opacity: 0;
+  }
+  100% {
+    scale: 1.5;
+    opacity: 0;
+    visibility: collapse;
+  }
+}

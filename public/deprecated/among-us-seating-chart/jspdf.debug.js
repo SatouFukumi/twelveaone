@@ -1,7 +1,7 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global.jspdf = factory());
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory()
+  : typeof define === 'function' && define.amd ? define(factory)
+  : (global.jspdf = factory());
 }(this, function () { 'use strict';
 
   var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
@@ -1335,10 +1335,10 @@
               //				curY = f2(pageHeight - activeFontSize * 1.7 /k);
               //			}
 
-              out('BT\n/' + activeFontKey + ' ' + activeFontSize + ' Tf\n' + // font face, style, size
-              activeFontSize * lineHeightProportion + ' TL\n' + // line spacing
-              strokeOption + // stroke option
-              textColor + '\n' + xtra + f2(x * k) + ' ' + curY + ' ' + mode + '\n(' + text + ') Tj\nET');
+              out('BT\n/' + activeFontKey + ' ' + activeFontSize + ' Tf\n' // font face, style, size
+              + activeFontSize * lineHeightProportion + ' TL\n' // line spacing
+              + strokeOption // stroke option
+              + textColor + '\n' + xtra + f2(x * k) + ' ' + curY + ' ' + mode + '\n(' + text + ') Tj\nET');
 
               if (todo) {
                   //this.text( todo, x, activeFontSize * 1.7 / k);
@@ -3606,11 +3606,11 @@ Q\n";
 
       var calcRes = AcroForm.internal.calculateX(formObject, text);
 
-      stream += '/Tx BMC\n' + 'q\n' +
+      stream += '/Tx BMC\n' + 'q\n'
       //color + '\n' +
-      '/F1 ' + calcRes.fontSize + ' Tf\n' +
+      + '/F1 ' + calcRes.fontSize + ' Tf\n'
       // Text Matrix
-      '1 0 0 1 0 0 Tm\n';
+      + '1 0 0 1 0 0 Tm\n';
       // Begin Text
       stream += 'BT\n';
       stream += calcRes.text;
@@ -4430,14 +4430,14 @@ Q\n";
   			if (imgData.charCodeAt(i) !== 0xff) {
   				throw new Error('getJpegSize could not find the size of the image');
   			}
-  			if (imgData.charCodeAt(i + 1) === 0xc0 || //(SOF) Huffman  - Baseline DCT
-  			imgData.charCodeAt(i + 1) === 0xc1 || //(SOF) Huffman  - Extended sequential DCT
-  			imgData.charCodeAt(i + 1) === 0xc2 || // Progressive DCT (SOF2)
-  			imgData.charCodeAt(i + 1) === 0xc3 || // Spatial (sequential) lossless (SOF3)
-  			imgData.charCodeAt(i + 1) === 0xc4 || // Differential sequential DCT (SOF5)
-  			imgData.charCodeAt(i + 1) === 0xc5 || // Differential progressive DCT (SOF6)
-  			imgData.charCodeAt(i + 1) === 0xc6 || // Differential spatial (SOF7)
-  			imgData.charCodeAt(i + 1) === 0xc7) {
+  			if (imgData.charCodeAt(i + 1) === 0xc0 //(SOF) Huffman  - Baseline DCT
+  			|| imgData.charCodeAt(i + 1) === 0xc1 //(SOF) Huffman  - Extended sequential DCT
+  			|| imgData.charCodeAt(i + 1) === 0xc2 // Progressive DCT (SOF2)
+  			|| imgData.charCodeAt(i + 1) === 0xc3 // Spatial (sequential) lossless (SOF3)
+  			|| imgData.charCodeAt(i + 1) === 0xc4 // Differential sequential DCT (SOF5)
+  			|| imgData.charCodeAt(i + 1) === 0xc5 // Differential progressive DCT (SOF6)
+  			|| imgData.charCodeAt(i + 1) === 0xc6 // Differential spatial (SOF7)
+  			|| imgData.charCodeAt(i + 1) === 0xc7) {
   				height = imgData.charCodeAt(i + 5) * 256 + imgData.charCodeAt(i + 6);
   				width = imgData.charCodeAt(i + 7) * 256 + imgData.charCodeAt(i + 8);
   				numcomponents = imgData.charCodeAt(i + 9);
@@ -9937,14 +9937,14 @@ Q\n";
   	FS_proto.WRITING = 1;
   	FS_proto.DONE = 2;
 
-  	FS_proto.error =
-  	FS_proto.onwritestart =
-  	FS_proto.onprogress =
-  	FS_proto.onwrite =
-  	FS_proto.onabort =
-  	FS_proto.onerror =
-  	FS_proto.onwriteend =
-  		null;
+  	FS_proto.error
+  	= FS_proto.onwritestart
+  	= FS_proto.onprogress
+  	= FS_proto.onwrite
+  	= FS_proto.onabort
+  	= FS_proto.onerror
+  	= FS_proto.onwriteend
+  		= null;
 
   	return saveAs;
   }(
@@ -9980,8 +9980,8 @@ Q\n";
   		global.adler32cs = callback();
   	}
   }(jsPDF, function() {
-  	var _hasArrayBuffer = typeof ArrayBuffer === 'function' &&
-  		typeof Uint8Array === 'function';
+  	var _hasArrayBuffer = typeof ArrayBuffer === 'function'
+  		&& typeof Uint8Array === 'function';
 
   	var _Buffer = null, _isBuffer = (function() {
   		if (!_hasArrayBuffer)
@@ -9994,8 +9994,8 @@ Q\n";
   		} catch (error) {}
 
   		return function _isBuffer(value) {
-  			return value instanceof ArrayBuffer ||
-  				_Buffer !== null && value instanceof _Buffer;
+  			return value instanceof ArrayBuffer
+  				|| _Buffer !== null && value instanceof _Buffer;
   		};
   	}());
 
@@ -12384,8 +12384,8 @@ Q\n";
 
   	/** Detect free variables */
   	var freeExports = typeof exports == 'object' && exports;
-  	var freeModule = typeof module == 'object' && module &&
-  		module.exports == freeExports && module;
+  	var freeModule = typeof module == 'object' && module
+  		&& module.exports == freeExports && module;
   	var freeGlobal = typeof global == 'object' && global;
   	if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal) {
   		root = freeGlobal;
@@ -12866,9 +12866,9 @@ Q\n";
   	// Some AMD build optimizers, like r.js, check for specific condition patterns
   	// like the following:
   	if (
-  		typeof define == 'function' &&
-  		typeof define.amd == 'object' &&
-  		define.amd
+  		typeof define == 'function'
+  		&& typeof define.amd == 'object'
+  		&& define.amd
   	) {
   		define('punycode', function() {
   			return punycode;
@@ -13002,12 +13002,12 @@ Q\n";
       this.g = 0;
       this.b = 0;
       this.a = null;
-      var result = this.fromArray(value) ||
-          this.namedColor(value) ||
-          this.rgb(value) ||
-          this.rgba(value) ||
-          this.hex6(value) ||
-          this.hex3(value);
+      var result = this.fromArray(value)
+          || this.namedColor(value)
+          || this.rgb(value)
+          || this.rgba(value)
+          || this.hex6(value)
+          || this.hex3(value);
   }
 
   Color.prototype.darken = function(amount) {
@@ -13092,9 +13092,9 @@ Q\n";
   };
 
   Color.prototype.toString = function() {
-      return this.a !== null && this.a !== 1 ?
-      "rgba(" + [this.r, this.g, this.b, this.a].join(",") + ")" :
-      "rgb(" + [this.r, this.g, this.b].join(",") + ")";
+      return this.a !== null && this.a !== 1
+      ? "rgba(" + [this.r, this.g, this.b, this.a].join(",") + ")"
+      : "rgb(" + [this.r, this.g, this.b].join(",") + ")";
   };
 
   Color.prototype.namedColor = function(value) {
@@ -13763,8 +13763,8 @@ Q\n";
       GradientContainer.apply(this, arguments);
       this.type = GradientContainer.TYPES.LINEAR;
 
-      var hasDirection = LinearGradientContainer.REGEXP_DIRECTION.test( imageData.args[0] ) ||
-          !GradientContainer.REGEXP_COLORSTOP.test( imageData.args[0] );
+      var hasDirection = LinearGradientContainer.REGEXP_DIRECTION.test( imageData.args[0] )
+          || !GradientContainer.REGEXP_COLORSTOP.test( imageData.args[0] );
 
       if (hasDirection) {
           imageData.args[0].split(/\s+/).reverse().forEach(function(position, index) {
@@ -13919,10 +13919,10 @@ Q\n";
 
   NodeContainer.prototype.isElementVisible = function() {
       return this.node.nodeType === Node.TEXT_NODE ? this.parent.visible : (
-          this.css('display') !== "none" &&
-          this.css('visibility') !== "hidden" &&
-          !this.node.hasAttribute("data-html2canvas-ignore") &&
-          (this.node.nodeName !== "INPUT" || this.node.getAttribute("type") !== "hidden")
+          this.css('display') !== "none"
+          && this.css('visibility') !== "hidden"
+          && !this.node.hasAttribute("data-html2canvas-ignore")
+          && (this.node.nodeName !== "INPUT" || this.node.getAttribute("type") !== "hidden")
       );
   };
 
@@ -14285,13 +14285,13 @@ Q\n";
   };
 
   NodeParser.prototype.createPseudoHideStyles = function(document) {
-      this.createStyles(document, '.' + PseudoElementContainer.prototype.PSEUDO_HIDE_ELEMENT_CLASS_BEFORE + ':before { content: "" !important; display: none !important; }' +
-          '.' + PseudoElementContainer.prototype.PSEUDO_HIDE_ELEMENT_CLASS_AFTER + ':after { content: "" !important; display: none !important; }');
+      this.createStyles(document, '.' + PseudoElementContainer.prototype.PSEUDO_HIDE_ELEMENT_CLASS_BEFORE + ':before { content: "" !important; display: none !important; }'
+          + '.' + PseudoElementContainer.prototype.PSEUDO_HIDE_ELEMENT_CLASS_AFTER + ':after { content: "" !important; display: none !important; }');
   };
 
   NodeParser.prototype.disableAnimations = function(document) {
-      this.createStyles(document, '* { -webkit-animation: none !important; -moz-animation: none !important; -o-animation: none !important; animation: none !important; ' +
-          '-webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; transition: none !important;}');
+      this.createStyles(document, '* { -webkit-animation: none !important; -moz-animation: none !important; -o-animation: none !important; animation: none !important; '
+          + '-webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; transition: none !important;}');
   };
 
   NodeParser.prototype.createStyles = function(document, styles) {
@@ -16750,10 +16750,10 @@ Q\n";
           }
         }
 
-        litCodeTable =
-          this.generateHuffmanTable(codeLengths.slice(0, numLitCodes));
-        distCodeTable =
-          this.generateHuffmanTable(codeLengths.slice(numLitCodes, codes));
+        litCodeTable
+          = this.generateHuffmanTable(codeLengths.slice(0, numLitCodes));
+        distCodeTable
+          = this.generateHuffmanTable(codeLengths.slice(numLitCodes, codes));
       } else {
         error('Unknown block type in flate stream');
       }

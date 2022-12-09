@@ -1,0 +1,7 @@
+/** Font: LuckiestGuy */
+@font-face {
+    font-family: "LuckiestGuy";
+    src: url("./../fonts/LuckiestGuy-Regular.ttf") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+  }
