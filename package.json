@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@fukumi/clsn": "^1.0.5",
-    "@fukumi/libraries": "^1.0.12",
+    "@fukumi/libraries": "^1.0.13",
     "@fukumi/rhooks": "^1.0.8",
     "@tanstack/react-query": "^4.19.1",
     "@trpc/client": "^10.4.3",
