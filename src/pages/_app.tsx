@@ -1,6 +1,18 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "src/styles/globals.css"
+import NextApp, { type AppProps } from "next/app"
+import { trpc } from "src/utils/trpc"
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+class App extends NextApp<AppProps> {
+  render() {
+    const { Component, pageProps, router } = this.props
+
+    return (
+      <Component
+        {...pageProps}
+        key={router.asPath}
+      />
+    )
+  }
 }
+
+export default trpc.withTRPC(App)
