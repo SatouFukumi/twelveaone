@@ -58,11 +58,10 @@ export default function withTwin(nextConfig) {
         }
       }
 
-      if (typeof nextConfig.webpack === "function") {
+      if (typeof nextConfig.webpack === "function")
         return nextConfig.webpack(config, options)
-      } else {
-        return config
-      }
+      
+      return config
     },
   }
 }

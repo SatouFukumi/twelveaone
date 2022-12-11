@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  isolation: isolate;
+  z-index: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  vertical-align: baseline;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}

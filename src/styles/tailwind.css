@@ -1,3 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  @font-face {
+    src: url("./../../public/fonts/LuckiestGuy-Regular.ttf") format("woff");
+    font-family: "Luckiest Guy";
+    font-weight: normal;
+    font-display: swap;
+    font-style: normal;
+  }
+}

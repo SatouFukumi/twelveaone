@@ -1,5 +1,6 @@
 import NextDocument, { Head, Html, Main, NextScript } from "next/document"
 import { DocumentHead } from "src/components/head"
+import SplashScreen from "src/components/splash-screen"
 
 export default class Document extends NextDocument {
   render(): JSX.Element {
@@ -10,6 +11,7 @@ export default class Document extends NextDocument {
         </Head>
 
         <body style={{ display: 'block' }}>
+          <SplashScreen />
           <Main />
           <NextScript />
         </body>

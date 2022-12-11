@@ -1,5 +1,6 @@
+import "src/styles/reset.css"
 import "src/styles/tailwind.css"
-import "src/styles/globals.css"
+import "src/styles/globals.scss"
 import { type AppProps, type AppType } from "next/app"
 import { trpc } from "src/utils/trpc"
 import { AppHead } from "src/components/head"
