@@ -8,6 +8,7 @@
 # testing
 sandbox/
 /coverage
+playground/
 
 # next.js
 /.next/
