@@ -1,9 +1,9 @@
 import type { inferRouterInputs, inferRouterOutputs } from "@trpc/server"
 import { loggerLink, httpBatchLink } from "@trpc/client"
 import { createTRPCNext } from "@trpc/next"
-import type { AppRouter } from "src/backend/routes/_app"
-import SuperJSON from "superjson"
+import { AppRouter } from "src/backend/routes/_app"
 import getBaseUrl from "./get-base-url"
+import { transformer } from "src/utils/superjson"
 
 export const trpc = createTRPCNext<AppRouter>({
   config() {
@@ -23,7 +23,7 @@ export const trpc = createTRPCNext<AppRouter>({
         }),
       ],
 
-      transformer: SuperJSON,
+      transformer,
     }
   },
 

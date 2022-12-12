@@ -1,9 +1,9 @@
 import { initTRPC } from "@trpc/server"
-import SuperJSON from "superjson"
+import { transformer } from "src/utils/superjson"
 
 // initialization
 const t = initTRPC.create({
-  transformer: SuperJSON,
+  transformer,
 
   errorFormatter({ shape }) {
     return shape

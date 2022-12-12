@@ -1,15 +1,10 @@
 import type { NextPage } from "next"
-import { trpc } from "src/utils/trpc"
 import "twin.macro"
 
 const Index: NextPage = () => {
-  const { data, isLoading } = trpc.test.useQuery()
-
-  if (isLoading || !data) return <>Loading...</>
-
   return (
-    <div tw="text-2xl text-black font-luckiestGuy">
-      Hello from index - {data}
+    <div tw="grid [height: 100vh] [width: 100vw] bg-[#0a2461]">
+      <div tw="m-auto font-luckiestGuy text-3xl text-[#fffaff]">Hi there!</div>
     </div>
   )
 }

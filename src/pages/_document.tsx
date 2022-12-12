@@ -10,7 +10,15 @@ export default class Document extends NextDocument {
           <DocumentHead />
         </Head>
 
-        <body style={{ display: 'block' }}>
+        <body
+          style={{
+            display: 'block',
+            margin: 0,
+            padding: 0,
+            minWidth: '100vw',
+            minHeight: '100vh'
+          }}
+        >
           <SplashScreen />
           <Main />
           <NextScript />
