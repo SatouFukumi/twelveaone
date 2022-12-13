@@ -24,7 +24,11 @@
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "prettier.config.cjs"
+    "next.config.js",
+    "postcss.config.cjs",
+    "prettier.config.cjs",
+    "tailwind.config.cjs",
+    "with-twin.js"
   ],
   "exclude": [
     "node_modules"
