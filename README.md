@@ -1,6 +1,6 @@
-<section align="center">
-  <h1>
-  
+<section align="center" style="display: flex; width: 100%;">
+  <h1 style="margin-inline: auto;">
+
     12A1 - Twelve A One 🌟
 
   </h1>
@@ -16,8 +16,10 @@ The class is located in [Vietnam, Gia Lai, Mang Yang, Kon Dong](https://www.goog
 
 <h2></h2> <!-- put the heading2 here just for the border -->
 
-<section align="center">
+<section align="center" style="display: flex; width: 100%;">
+  <span style="margin-inline: auto;">
 
   `With all my ❤️.`
 
+  </span>
 </section>
