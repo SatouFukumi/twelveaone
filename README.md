@@ -11,13 +11,3 @@ The class is located in [Vietnam, Gia Lai, Mang Yang, Kon Dong](https://www.goog
 [Tran Hung Dao high school](http://thpttranhungdao.gialai.edu.vn/).
 
 <h2></h2>
-
-<style>
-  .border-none {
-    border: none;
-  }
-
-  * {
-    border-width: 1px;
-  }
-</style>
