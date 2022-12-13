@@ -1,7 +1,7 @@
 <div align="center">
   <h1 align="center">
 
-    12A1 - Twelve A One 🌟
+    Twelve A One 🌟
 
   </h1>
 </div>
