@@ -21,14 +21,12 @@
     "baseUrl": "."
   },
   "include": [
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.mjs",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
-    "postcss.config.cjs",
-    "prettier.config.cjs",
-    "tailwind.config.cjs",
-    "with-twin.js"
+    "next-env.d.ts"
   ],
   "exclude": [
     "node_modules"
