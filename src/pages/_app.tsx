@@ -2,14 +2,16 @@ import "src/styles/reset.css"
 import "src/styles/tailwind.css"
 import "src/styles/globals.scss"
 import { type AppProps, type AppType } from "next/app"
-import { trpc } from "src/utils/trpc"
-import { AppHead } from "src/components/head"
+import { trpc } from "src/utils/trpc/trpc-next"
+import Head from "next/head"
 
 const App: AppType = ({ Component, pageProps, router }: AppProps) => {
   return (
     <>
-      <AppHead />
-    
+      <Head>
+        <meta />
+      </Head>
+
       <Component
         {...pageProps}
         key={router.asPath}

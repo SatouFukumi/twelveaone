@@ -6,5 +6,5 @@ export default function getBaseUrl() {
       return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}` // reference for render.com
 
   // assume local
-  return `http://192.168.1.4:${process.env.PORT ?? 3000}`
+  return `http://192.168.1.11:${process.env.PORT ?? 3000}`
 }

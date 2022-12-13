@@ -11,6 +11,8 @@ const transformer = {
 }
 
 function recursivelyStringifyFunctions(payload: any) {
+  if (payload === null) return payload
+
   if (typeof payload === "function") return stringifyFunction(payload)
 
   if (typeof payload === "object")
@@ -26,6 +28,8 @@ function recursivelyStringifyFunctions(payload: any) {
 }
 
 function recursivelyParseFunctions(payload: any) {
+  if (payload === null) return payload
+
   if (isStringifiedFunction(payload)) return backToFunction(payload[1])
 
   if (typeof payload === "object")

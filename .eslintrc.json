@@ -1,8 +1,14 @@
 {
   "extends": [
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
+    "no-unused-vars": "off",
     "camelcase": "error",
     "arrow-spacing": "error",
     "operator-linebreak": [

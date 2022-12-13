@@ -1,8 +1,9 @@
 import { initTRPC } from "@trpc/server"
 import { transformer } from "src/utils/superjson"
+import { type Context } from "./context"
 
 // initialization
-const t = initTRPC.create({
+const t = initTRPC.context<Context>().create({
   transformer,
 
   errorFormatter({ shape }) {

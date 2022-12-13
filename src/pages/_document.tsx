@@ -1,5 +1,4 @@
 import NextDocument, { Head, Html, Main, NextScript } from "next/document"
-import { DocumentHead } from "src/components/head"
 import SplashScreen from "src/components/splash-screen"
 
 export default class Document extends NextDocument {
@@ -7,16 +6,18 @@ export default class Document extends NextDocument {
     return (
       <Html lang="vi">
         <Head>
-          <DocumentHead />
+          <meta charSet="utf-8" />
+
+          <link rel="shortcut icon" href="/icons/favicon.ico" />
         </Head>
 
         <body
           style={{
-            display: 'block',
+            display: "block",
             margin: 0,
             padding: 0,
-            minWidth: '100vw',
-            minHeight: '100vh'
+            minWidth: "100vw",
+            minHeight: "100vh",
           }}
         >
           <SplashScreen />
