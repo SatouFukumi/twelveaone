@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import superJSON from "./instance"
 
 const transformer = {
@@ -5,7 +6,7 @@ const transformer = {
     return superJSON.serialize(recursivelyStringifyFunctions(object))
   },
 
-  deserialize(payload: any) {
+  deserialize<T>(payload: any): T {
     return recursivelyParseFunctions(superJSON.deserialize(payload))
   },
 }
@@ -16,7 +17,7 @@ function recursivelyStringifyFunctions(payload: any) {
   if (typeof payload === "function") return stringifyFunction(payload)
 
   if (typeof payload === "object")
-    for (let [key] of Object.entries(payload)) {
+    for (const [key] of Object.entries(payload)) {
       const property = payload[key]
 
       if (typeof property === "object") recursivelyStringifyFunctions(property)
@@ -33,7 +34,7 @@ function recursivelyParseFunctions(payload: any) {
   if (isStringifiedFunction(payload)) return backToFunction(payload[1])
 
   if (typeof payload === "object")
-    for (let [key] of Object.entries(payload)) {
+    for (const [key] of Object.entries(payload)) {
       const property = payload[key]
 
       if (isStringifiedFunction(property)) payload[key] = backToFunction(property[1])
