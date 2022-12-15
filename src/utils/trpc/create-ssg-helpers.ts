@@ -1,6 +1,6 @@
 import { createProxySSGHelpers } from "@trpc/react-query/ssg"
 import { type CreateContextOptions, createContextInner } from "src/backend/trpc/context"
-import { AppRouter, appRouter } from "src/backend/trpc/routers/_app"
+import { type AppRouter, appRouter } from "src/backend/trpc/routers/_app"
 import { transformer } from "../superjson"
 
 /**

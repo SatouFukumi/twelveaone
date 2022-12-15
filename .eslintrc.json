@@ -8,8 +8,12 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "no-unused-vars": "off",
-    "camelcase": "error",
+    "no-unused-vars": [
+      "off"
+    ],
+    "camelcase": [
+      "warn"
+    ],
     "arrow-spacing": "error",
     "operator-linebreak": [
       "error",
