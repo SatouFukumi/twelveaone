@@ -15,7 +15,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.5",
-    "@fukumi/libraries": "^1.0.14",
+    "@fukumi/libraries": "^1.0.16",
     "@fukumi/rhooks": "^1.0.9",
     "@tanstack/react-query": "^4.20.4",
     "@trpc/client": "^10.5.0",
@@ -24,10 +24,11 @@
     "@trpc/server": "^10.5.0",
     "envsafe": "^2.0.3",
     "next": "13.0.7",
-    "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react": "18.2.0",
     "superjson": "^1.12.0",
-    "zod": "^3.20.2"
+    "zod": "^3.20.2",
+    "zustand": "^4.1.5"
   },
   "author": "Fukumi",
   "license": "MIT",
