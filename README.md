@@ -50,7 +50,7 @@ The class is located in [Vietnam, Gia Lai, Mang Yang, Kon Dong](https://www.goog
 
 <h2>🪨 Milestones</h2>
 
-- ✅ The implementation for basic template level 2 of `tRpc` and `tailwindcss` is [here](https://github.com/SatouFukumi/twelveaone/tree/21894532b9af2d649e5c042f9b1b80c8693dea1c).
+- ✅ The implementation for basic template level 2 of `tRpc` and `tailwindcss` is [here](https://github.com/SatouFukumi/twelveaone/tree/fbd9800f59ee3a38235534c565ba7795b39695c4).
 
 <h2></h2> <!-- put the heading2 here just for the border -->
 
