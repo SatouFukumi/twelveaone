@@ -5,10 +5,11 @@ import { transformer } from "../superjson"
 
 /**
  * ```ts
+ * // remember to pass this in
  * { props: { trpcState: ssg.dehydrate() } }
  * ```
  */
-export async function createSSGHelpers(opts?: CreateContextOptions) {
+export const createSSGHelpers = async (opts?: CreateContextOptions) => {
   return createProxySSGHelpers<AppRouter>({
     router: appRouter,
     transformer,

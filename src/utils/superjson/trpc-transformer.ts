@@ -1,17 +1,25 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import superJSON from "./instance"
 
-const transformer = {
-  serialize(object: any) {
-    return superJSON.serialize(recursivelyStringifyFunctions(object))
-  },
-
-  deserialize<T>(payload: any): T {
-    return recursivelyParseFunctions(superJSON.deserialize(payload))
-  },
+const stringifyFunction = (fn: () => any) => {
+  // eslint-disable-next-line camelcase
+  return [{ __superjson_type__: "function" }, fn.toString()]
 }
 
-function recursivelyStringifyFunctions(payload: any) {
+const isStringifiedFunction = (payload: any) => {
+  return (
+    payload instanceof Array
+    && typeof payload[0] === "object"
+    && "__superjson_type__" in payload[0]
+    && payload[0].__superjson_type__ === "function"
+  )
+}
+
+const backToFunction = (fnString: string) => {
+  return new Function("return " + fnString)()
+}
+
+const recursivelyStringifyFunctions = (payload: any) => {
   if (payload === null) return payload
 
   if (typeof payload === "function") return stringifyFunction(payload)
@@ -28,7 +36,7 @@ function recursivelyStringifyFunctions(payload: any) {
   return payload
 }
 
-function recursivelyParseFunctions(payload: any) {
+const recursivelyParseFunctions = (payload: any) => {
   if (payload === null) return payload
 
   if (isStringifiedFunction(payload)) return backToFunction(payload[1])
@@ -44,22 +52,14 @@ function recursivelyParseFunctions(payload: any) {
   return payload
 }
 
-function stringifyFunction(fn: () => any) {
-  // eslint-disable-next-line camelcase
-  return [{ __superjson_type__: "function" }, fn.toString()]
-}
+const transformer = {
+  serialize(object: any) {
+    return superJSON.serialize(recursivelyStringifyFunctions(object))
+  },
 
-function isStringifiedFunction(payload: any) {
-  return (
-    payload instanceof Array
-    && typeof payload[0] === "object"
-    && "__superjson_type__" in payload[0]
-    && payload[0].__superjson_type__ === "function"
-  )
-}
-
-function backToFunction(fnString: string) {
-  return new Function("return " + fnString)()
+  deserialize<T>(payload: any): T {
+    return recursivelyParseFunctions(superJSON.deserialize(payload))
+  },
 }
 
 export default transformer
