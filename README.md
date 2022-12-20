@@ -13,6 +13,30 @@ The class is located in [Vietnam, Gia Lai, Mang Yang, Kon Dong](https://www.goog
 <h2>🏗️ Developing conventions</h2>
 
 - I don't use any kind of safe parse for environment variables, as I think they are essential.
+- Naming conventions : 
+  - `CONSTANT` : constant-case should only be used on non-calculated or somewhat considered hard coded. The convention also recommend that from the depth of constant-case use, everything is constant.
+    ```ts
+    // example
+    const date = new Date()
+    const DATE = new Date('20-11-2005 00:00')
+
+    const env = {
+      SOMETHING: 'something',
+      FOO: {
+        bar: 'baz'
+      }
+    }
+    env.newKey = 'new other value' // yes (read the convention carefully if you didn't get this)
+    env.SOMETHING = 'other things' // no
+    env.FOO = {} // no
+    env.FOO.bar = 'foo' // no
+
+    const CONSTANT = {
+      foo: 'bar'
+    }
+    CONSTANT.foo = 'baz' // no
+    ```
+
 - Use of `interface` and `type` :
   - `type` :
     - When defining an alias for **primitive** types (`string`, `boolean`, `number`, `...`).
